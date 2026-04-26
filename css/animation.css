@@ -1,0 +1,62 @@
+/* =============================================
+   アニメーション定義
+   作成：NEXUS / FORGE
+   ============================================= */
+
+/* スクロールアニメーション基本設定 */
+.animate-target {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-target.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* カードの遅延アニメーション */
+.strength-card:nth-child(1),
+.service-card:nth-child(1) { transition-delay: 0.0s; }
+
+.strength-card:nth-child(2),
+.service-card:nth-child(2) { transition-delay: 0.12s; }
+
+.strength-card:nth-child(3),
+.service-card:nth-child(3) { transition-delay: 0.24s; }
+
+.strength-card:nth-child(4),
+.service-card:nth-child(4) { transition-delay: 0.36s; }
+
+/* プロセスステップの遅延 */
+.process-step:nth-child(1) { transition-delay: 0.0s; }
+.process-step:nth-child(2) { transition-delay: 0.15s; }
+.process-step:nth-child(3) { transition-delay: 0.30s; }
+.process-step:nth-child(4) { transition-delay: 0.45s; }
+.process-step:nth-child(5) { transition-delay: 0.60s; }
+
+/* ヒーローセクションのアニメーション */
+.hero-badge   { transition-delay: 0.1s; }
+.hero-title   { transition-delay: 0.25s; }
+.hero-sub     { transition-delay: 0.4s; }
+.hero-buttons { transition-delay: 0.55s; }
+.hero-stats   { transition-delay: 0.7s; }
+
+/* ページ読み込み時のフェードイン */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ローディング後に即表示させる要素（ヒーロー内） */
+.hero .animate-target {
+  animation: fadeInUp 0.7s ease both;
+  opacity: 1;
+  transform: none;
+}
